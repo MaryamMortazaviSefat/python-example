@@ -1,4 +1,4 @@
-from library import Library
+from mylibrary import Library
 
 def show_menu():
     print("\n Library Menu:")
@@ -42,6 +42,5 @@ def main():
         else:
             print(" Invalid choice. Please try again.")
 
-# فقط وقتی فایل مستقیماً اجرا بشه، تابع main اجرا می‌شه
 if __name__ == "__main__":
     main()
