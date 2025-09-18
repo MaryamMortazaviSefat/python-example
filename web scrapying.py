@@ -1,13 +1,17 @@
-import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
-import time
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 url = "https://www.iranketab.ir/"
 driver=webdriver.Chrome()
 driver.get(url)
-#response = requests.get(url)
-time.sleep(5)
+
+WebDriverWait(driver, 15).until(
+    EC.presence_of_element_located((By.CLASS_NAME, "book-item__title"))
+)
+
 html=driver.page_source
 soup = BeautifulSoup(html, "html.parser")
 
