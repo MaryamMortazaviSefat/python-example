@@ -18,6 +18,7 @@ def continue_menu():
 
 print("سلام خوش آمدید\n")
 Is_run=True
+todolist=Classes.ToDoList()
 
 while(Is_run):
     
@@ -34,11 +35,17 @@ while(Is_run):
     option=int(input())
 
     if option==1:
-         pass
+         name=input("لطفا نام کار را وارد کنید:")
+         description=input("لطفا توضیحات کار را وارد کنید:")
+         priority=int(input("لطفا اولویت کار خود را وارد کنید:"))
+         new_task=Classes.Task(name,description,priority)
+         todolist.add_task(new_task)
+
+ 
     elif option==2:
          pass
     elif option==3:
-         print("str todolist")
+         print(str(todolist))
     elif option==3:
          pass
     elif option==4:

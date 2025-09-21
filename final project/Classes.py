@@ -11,7 +11,7 @@ class Task:
         return self.name
 
     def __str__(self):
-        return f"Name: {self.name}\ndescription: {self.description}\npriority: {self.priority}"
+        return f"Name: {self.name}   description: {self.description}    priority: {self.priority}"
 
 
 class ToDoList:
@@ -37,7 +37,8 @@ class ToDoList:
 
 
     def remove_task(self,name):
-        if self.search_task(task.get_name()) != -1:
+        task=self.search_task(name)
+        if task != -1:
             self.tasks.remove(task)
             return True
         return False
@@ -45,10 +46,10 @@ class ToDoList:
     
 
     def __str__(self):
-        result=""
+        result=":کل لیست کار ها \n"
         for task in self.tasks:
-            result.join(srt(task)).join("\n")
-
+            result= result+str(task)
+            result= result+"\n"
         return result
      
 
