@@ -1,0 +1,12 @@
+[
+  {
+    "name": "خواب",
+    "description": "خوابیدن",
+    "priority": 3
+  },
+  {
+    "name": "تمرین",
+    "description": "زبان",
+    "priority": 2
+  }
+]
