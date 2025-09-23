@@ -1,26 +1,9 @@
 import Classes
 
-
-def continue_menu():
-        print("آیا می خواهید دوباره به منو برگردید؟\n")
-        print("لطفا عدد گزینه مورد نظر را انتخاب کنید:\n1.یله\n2.خیر\n")
-        option=int(input())
-        if option==1:
-            return True
-        elif option==2:
-            return False
-        else:
-            print("لطفا تنها عدد وارد کنید")
-            continue_menu()
-
-
-
-
 print("سلام خوش آمدید\n")
-Is_run=True
 todolist=Classes.ToDoList()
 
-while(Is_run):
+while(True):
     
     print("منوی پروژه لیست کارهای انجامی: \n"
           "لطفا یک گزینه را انتخاب کنید\n"
@@ -31,11 +14,11 @@ while(Is_run):
           "5.بارگزاری از فایل  csv\n"
           "6.انتخاب اوبویت کارها\n" 
           "7.ذخیره لیست کار ها در فایل json\n"
-          "8.بارگزاری کار ها از فایل json\n"   
+          "8.بارگزاری کار ها از فایل json\n"  
+          "9.خروج" 
     )
 
     option=int(input())
-
 
     if option==1:
          name=input("لطفا نام کار را وارد کنید:")
@@ -47,7 +30,6 @@ while(Is_run):
          else:
               print("عملیات ناموفق")
               
-
  
     elif option==2:
           name=input("لطفا نام کار را وارد کنید:")
@@ -102,6 +84,10 @@ while(Is_run):
                   print(f"لیست از فایل {todolist.get_path_file()} خوانده شد ")
          except "error":
               print("مشکلی در بارگزاری رخ داده است!")
+
+
+    elif option==9:
+         exit()
          
          
     else:
@@ -109,8 +95,7 @@ while(Is_run):
 
 
 
-    Is_run= continue_menu()
-
+     
     
 
 

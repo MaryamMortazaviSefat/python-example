@@ -73,8 +73,8 @@ class ToDoList:
 
     def save_tasks_csv(self):
         with open(self.file_path+".csv","w") as file:
-            writer=csv.Writer(file)
-            writer.writerow(list(task) for task in self.tasks)
+            writer=csv.DictWriter(file)
+            writer.writerows(list(task) for task in self.tasks)
             return True
         return False 
     
