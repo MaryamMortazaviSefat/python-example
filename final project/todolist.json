@@ -1,7 +1,12 @@
 [
   {
+    "name": "خواب",
+    "description": "-",
+    "priority": 3
+  },
+  {
     "name": "rg",
     "description": "ew",
-    "priority": 1
+    "priority": 2
   }
 ]

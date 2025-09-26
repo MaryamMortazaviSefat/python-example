@@ -64,16 +64,18 @@ class ToDoList:
 
 
     def load_tasks_scv(self):
-        with open(self.file_path+".csv","r") as file:
-            reader=csv.DictReader(file)
-            self.tasks=list(reader)
+        with open(self.file_path+".csv","r",newline='',encoding='utf-8') as file:
+            reader=csv.reader(file)
+            next(reader)
+            self.tasks=list(Task(row[0],row[1],row[2]) for row in reader)
             return True
         return False    
 
 
     def save_tasks_csv(self):
-        with open(self.file_path+".csv","w") as file:
-            writer=csv.DictWriter(file)
+        with open(self.file_path+".csv","w",newline='',encoding='utf-8') as file:
+            writer=csv.writer(file)
+            writer.writerow(['name','description','priority'])
             writer.writerows(list(task) for task in self.tasks)
             return True
         return False 
